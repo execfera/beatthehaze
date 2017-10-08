@@ -52,7 +52,7 @@ state     Shows API for all areas in the given state.\n";
             $stateres = 'API Readings for ' . strtoupper($srcterm) . ' at ' . end($json[0]) . ":\n\n";
             $stateres_arr = array_keys($states, $srcterm);
             for ($i = 0; $i < sizeof($stateres_arr); $i++) { 
-                $stateres_arr[$i] = $json[$stateres_arr[$i]][1] . ': '. end($json[$stateres_arr[$i]]) . "\n";
+                $stateres_arr[$i] = $json[$stateres_arr[$i]+1][1] . ': '. end($json[$stateres_arr[$i]+1]) . "\n";
             }
             return $stateres . join($stateres_arr);
         }
